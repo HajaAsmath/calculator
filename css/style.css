@@ -1,0 +1,54 @@
+html body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: arial,sans-serif;
+}
+
+main{
+    height: 100vh;
+    text-align: center;
+}
+
+#main-container {
+    display: inline-block;
+}
+
+#cals {
+    padding-top: 100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(6, 60px);
+    grid-gap: 3px 3px;
+}
+
+#screen {
+    grid-column: 1/5;
+    border: solid;
+    border-radius: 5px;
+}
+
+#screen-input {
+    height: 50px;
+    width: 230px;
+    outline: none;
+    border: none;
+    font-size: large;
+    color : transparent;
+    text-shadow : 0 0 0 #000;
+}
+
+.keys {
+    padding-top: 18px;
+    border: solid;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.keys label {
+    cursor: pointer;
+}
+
