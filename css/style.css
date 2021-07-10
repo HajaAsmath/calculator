@@ -8,6 +8,7 @@ html body{
 main{
     height: 100vh;
     text-align: center;
+    background-color: rgb(0, 0, 0);
 }
 
 #main-container {
@@ -15,33 +16,58 @@ main{
 }
 
 #cals {
-    padding-top: 100px;
-    margin: 0 auto;
+    margin-top: 200px;
+    padding: 10px;
+    background-color: black;
     display: grid;
     grid-template-columns: repeat(4, 60px);
     grid-template-rows: repeat(6, 60px);
     grid-gap: 3px 3px;
+    border: solid;
+    border-radius: 10px;
+    border-color: white;
 }
 
 #screen {
     grid-column: 1/5;
     border: solid;
     border-radius: 5px;
-    font-size: large;
+    border-color: white;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
     text-align: right;
     padding: 15px 5px 15px 5px;
 }
 
 .keys {
-    padding-top: 18px;
+    padding-top: 16px;
     border: solid;
-    border-radius: 5px;
+    border-radius: 50%;
     cursor: pointer;
     font-weight: bold;
     font-size: 22px;
 }
 
+.operand {
+    background-color: rgb(50, 50, 50);
+}
+
+.operator {
+    background-color: rgb(250, 147, 7);
+}
+
 .keys label {
     cursor: pointer;
+    color: white;
+}
+
+.grey {
+    
+    background-color: rgb(165, 165, 165);
+}
+
+.grey label {
+    color: rgb(0, 0, 0);
 }
 
