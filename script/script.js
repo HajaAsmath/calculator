@@ -17,12 +17,12 @@ let first = true;
 
 function start() {
     keys.forEach(key => key.addEventListener("click", addToScreenMouse));
-    operator_key.forEach(key => key.addEventListener("click", addOperator));
+    operator_key.forEach(key => key.addEventListener("click", includeOperator));
     equal_key.addEventListener("click", equalOperator);
     percentage_key.addEventListener("click", calculatePercentage);
     backSpace_key.addEventListener("click", backSpaceInScreen);
     clear_key.addEventListener("click", clearScreen);
-    document.addEventListener("keydown", addToScreenKeyboard);
+    document.addEventListener("keydown", addToScreen);
 }
 
 function clearScreen(e) {
@@ -34,10 +34,10 @@ function clearScreen(e) {
 
 function backSpaceInScreen(e) {
     e.key = backSpace;
-    addToScreenKeyboard(e);
+    addToScreen(e);
 }
 
-function addToScreenKeyboard(e) {
+function addToScreen(e) {
     const isNumber = numberKeys.find(key => key === e.key) === undefined?false:true;
     if(isNumber) {
         screen.innerText = temp + e.key;
@@ -48,21 +48,12 @@ function addToScreenKeyboard(e) {
     }
 }
 
-function calculatePercentage(e) {
-    let number = Number(screen.innerText);
-    screen.innerText = number/100;
-    temp = screen.innerText;
-    operand2 = 0;
-    operand1 = 0;
-    operator = '';
-}
-
 function addToScreenMouse(e) {
     e.key = e.target.innerText;
-    addToScreenKeyboard(e);
+    addToScreen(e);
 }
 
-function addOperator(e) {
+function includeOperator(e) {
     if(operand1 !== 0 && operator !== '' && temp !== '') {
         operand2 = Number(temp);
         operand1 = calculate();
@@ -110,5 +101,14 @@ function equalOperator(e) {
      }
      return result;
  }
+
+ function calculatePercentage(e) {
+    let number = Number(screen.innerText);
+    screen.innerText = number/100;
+    temp = screen.innerText;
+    operand2 = 0;
+    operand1 = 0;
+    operator = '';
+}
 
 start();
