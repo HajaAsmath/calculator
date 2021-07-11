@@ -8,6 +8,7 @@ const equal_key = document.querySelector(".equals");
 const percentage_key = document.querySelector(".percentage");
 const backSpace_key = document.querySelector(".backspace");
 const clear_key = document.querySelector(".clear");
+const dot_key = document.querySelector(".dot");
 
 let operand1 = 0;
 let operand2 = 0;
@@ -22,6 +23,7 @@ function start() {
     percentage_key.addEventListener("click", calculatePercentage);
     backSpace_key.addEventListener("click", backSpaceInScreen);
     clear_key.addEventListener("click", clearScreen);
+    dot_key.addEventListener("click", addDot);
     document.addEventListener("keydown", addToScreen);
 }
 
@@ -35,6 +37,13 @@ function clearScreen(e) {
 function backSpaceInScreen(e) {
     e.key = backSpace;
     addToScreen(e);
+}
+
+function addDot(e) {
+    if(temp === '') temp = '0';
+    if(temp.includes('.')) return;
+    temp += '.';
+    screen.innerText = temp;
 }
 
 function addToScreen(e) {
